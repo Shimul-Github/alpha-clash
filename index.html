@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -22,22 +22,22 @@
 
 </head>
 
-<body class="">
+<body>
 
     <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center ">
         <!-- HOME SCREEN -->
-        <section class="home min-h-screen text-white flex  items-center justify-center">
+        <section id="home-screen" class="min-h-screen text-white flex  items-center justify-center">
             <div class="flex flex-col items-center gap-10 ">
                 <h1 class="text-4xl font-serif">Alpha Clash Pro</h1>
                 <p>Unleash Your Keyboard Kun G Fu : Press 'Enter' to play</p>
-                <button onclick="play()" class="btn bg-white text-black">PLAY NOW</button>
+                <button onclick="play()"  class="btn bg-white text-black">PLAY NOW</button>
             </div>
 
         </section>
         <!-- PLAY GROUND -->
-        <section class="play-ground hidden">
+        <section id="play-ground" class=" hidden ">
 
-            <div class="flex flex-col items-center gap-20 pt-20">
+            <div class="flex flex-col items-center gap-20 pt-10 justify-center min-h-screen">
                 <!-- screen START -->
                 <!-- ADD HEXA CODE COLOR OPACITY [#010313CC] LIKE THIS  -->
                 <div
@@ -47,61 +47,64 @@
                         <p class="bg-slate-400 px-6 py-4 rounded-b-xl text-white">Dont Watch Keyboard while typing</p>
                     </div>
                     <div class="flex justify-center items-center h-full">
-                        <p class="text-black text-9xl font-bold">Y</p>
+                        <p id="current-alpabate" class="text-black text-9xl font-bold uppercase">Y</p>
                     </div>
 
                 </div>
 
                 <!-- screen END -->
                 <!-- keyboard start-->
-                <div>
+                <div >
                     <div class="flex justify-center gap-1 my-1 w-full">
-                        <kbd class="kbd">q</kbd>
-                        <kbd class="kbd">w</kbd>
-                        <kbd class="kbd">e</kbd>
-                        <kbd class="kbd">r</kbd>
-                        <kbd class="kbd">t</kbd>
-                        <kbd class="kbd">y</kbd>
-                        <kbd class="kbd">u</kbd>
-                        <kbd class="kbd">i</kbd>
-                        <kbd class="kbd">o</kbd>
-                        <kbd class="kbd">p</kbd>
+                        <kbd id="q" class="kbd">q</kbd>
+                        <kbd id="w" class="kbd">w</kbd>
+                        <kbd id="e" class="kbd">e</kbd>
+                        <kbd id="r" class="kbd">r</kbd>
+                        <kbd id="t" class="kbd">t</kbd>
+                        <kbd id="y" class="kbd">y</kbd>
+                        <kbd id="u" class="kbd">u</kbd>
+                        <kbd id="i" class="kbd">i</kbd>
+                        <kbd id="o" class="kbd">o</kbd>
+                        <kbd id="p" class="kbd">p</kbd>
                     </div>
                     <div class="flex justify-center gap-1 my-1 w-full">
-                        <kbd class="kbd">a</kbd>
-                        <kbd class="kbd">s</kbd>
-                        <kbd class="kbd">d</kbd>
-                        <kbd class="kbd">f</kbd>
-                        <kbd class="kbd">g</kbd>
-                        <kbd class="kbd">h</kbd>
-                        <kbd class="kbd">j</kbd>
-                        <kbd class="kbd">k</kbd>
-                        <kbd class="kbd">l</kbd>
+                        <kbd id="a" class="kbd">a</kbd>
+                        <kbd id="s" class="kbd">s</kbd>
+                        <kbd id="d" class="kbd">d</kbd>
+                        <kbd id="f" class="kbd">f</kbd>
+                        <kbd id="g" class="kbd">g</kbd>
+                        <kbd id="h" class="kbd">h</kbd>
+                        <kbd id="j" class="kbd">j</kbd>
+                        <kbd id="k" class="kbd">k</kbd>
+                        <kbd id="l" class="kbd">l</kbd>
                     </div>
                     <div class="flex justify-center gap-1 my-1 w-full">
-                        <kbd class="kbd">z</kbd>
-                        <kbd class="kbd">x</kbd>
-                        <kbd class="kbd">c</kbd>
-                        <kbd class="kbd">v</kbd>
-                        <kbd class="kbd">b</kbd>
-                        <kbd class="kbd">n</kbd>
-                        <kbd class="kbd">m</kbd>
-                        <kbd class="kbd">/</kbd>
+                        <kbd id="z" class="kbd">z</kbd>
+                        <kbd id="x" class="kbd">x</kbd>
+                        <kbd id="c" class="kbd">c</kbd>
+                        <kbd id="v" class="kbd">v</kbd>
+                        <kbd id="b" class="kbd">b</kbd>
+                        <kbd id="n" class="kbd">n</kbd>
+                        <kbd id="m" class="kbd">m</kbd>
+                        <kbd id="/" class="kbd">/</kbd>
                     </div>
                 </div>
                 <!-- keyboard end-->
                 <!-- lifescore START -->
-                <div class="flex justify-between w-2/3">
+                <div class="flex  justify-between gap-80">
+                    <!-- display life -->
                     <button class="btn rounded-full bg-purple-300 text-white px-4">
                         Life
                         <img src="images/Group 23.png" alt="">
-                        <span>1</span>
+                        <span id="current-life">5</span>
 
                     </button>
+
+                    <!-- display score -->
                     <button class="btn rounded-full bg-purple-700 text-white px-4">
                         Score
                         <img src="images/monetization_on.png" alt="">
-                        <span>1</span>
+                        <span id="current-score">0</span>
                     </button>
 
                 </div>
@@ -114,15 +117,15 @@
         </section>
         <!-- Playground End -->
         <!-- Score Start -->
-       
-        <section class="score flex justify-center min-h-screen items-center hidden">
+        <section id="final-score" class=" flex justify-center min-h-screen items-center hidden">
             <div class="text-white text-center space-y-6 bg-[#FFFFFF33] rounded-2xl p-8">
+                <h1 class="text-3xl">Game Over Mia!</h1>
                 <h1 class="text-8xl ">
                     <span class="font-extrabold">Score:</span>
-                    <span>14</span>
+                    <span id="last-score">14</span>
 
                 </h1>
-                <button class="btn">Play Again</button>
+                <button onclick="play()" class="btn">Play Again</button>
                 <p>Practice make you Pro</p>
             </div>
 
@@ -134,6 +137,7 @@
 
 
 
+    <script src="js/utility.js"></script>
     <script src="js/js.js"></script>
 </body>
 
